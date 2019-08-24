@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="VanguardApplication.CardView">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="Add2Deck" Text="Add to Deck" Clicked="Add_2_Deck_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <StackLayout>
+                    <Label x:Name="Name" FontSize="Title" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black"/>
+                    <Label x:Name="Set" FontSize="Medium" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black"/>
+                    <Grid>
+                        <Image x:Name="CardImage" Grid.Row="0" Grid.Column="0"/>
+                        <StackLayout Grid.Row="0" Grid.Column="1">
+                            <Label x:Name="Type" TextColor="Black" FontSize="Body"/>
+                            <Label x:Name="Group" TextColor="Black" FontSize="Body"/>
+                            <Label x:Name="Race" TextColor="Black" FontSize="Body"/>
+                            <Label x:Name="Nation" TextColor="Black" FontSize="Body"/>
+                            <Label x:Name="Grade" TextColor="Black" FontSize="Body"/>
+                            <Label x:Name="Power" TextColor="Black" FontSize="Body"/>
+                            <Label x:Name="Critical" TextColor="Black" FontSize="Body"/>
+                            <Label x:Name="Shield" TextColor="Black" FontSize="Body"/>
+                            <Label x:Name="Skill" TextColor="Black" FontSize="Body"/>
+                            <Label x:Name="Gift" TextColor="Black" FontSize="Body"/>
+                        </StackLayout>
+                    </Grid>
+                    <Label x:Name="Effect" TextColor="Black" BackgroundColor="LightGray"/>
+                    <Label x:Name="Flavor" TextColor="White" BackgroundColor="Black" FontSize="Body" HorizontalTextAlignment="Center"/>
+                    <Grid HorizontalOptions="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="Regulation" TextColor="Black" FontSize="Body" Grid.Row="0" Grid.Column="0"></Label>
+                        <Label Text="|" TextColor="Black" FontSize="Body" Grid.Row="0" Grid.Column="1"></Label>
+                        <Label x:Name="Number" TextColor="Black" FontSize="Body" Grid.Row="0" Grid.Column="2"></Label>
+                        <Label Text="|" TextColor="Black" FontSize="Body" Grid.Row="0" Grid.Column="3"></Label>
+                        <Label x:Name="Rarity" TextColor="Black" FontSize="Body" Grid.Row="0" Grid.Column="4"></Label>
+                        <Label Text="|" TextColor="Black" FontSize="Body" Grid.Row="0" Grid.Column="5"></Label>
+                        <Label x:Name="Illustrator" TextColor="Black" FontSize="Body" Grid.Row="0" Grid.Column="6"></Label>
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+            <ContentView x:Name="AddCardPopUp" BackgroundColor="#C0808080" Padding="10, 0" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical" HeightRequest="300" WidthRequest="300" BackgroundColor="White">
+                        <Button HorizontalOptions="End"
+                                BorderColor="Transparent"
+                                BackgroundColor="Transparent" 
+                                Clicked="Exit_Button_Clicked"
+                                Text="x"></Button>
+                        <Picker x:Name="DeckPicker" 
+                                Margin="20,20,20,10"/>
+                        <Entry Margin="20, 0, 20, 0" x:Name="NewDeckEntry" Placeholder="Enter Deck Name"></Entry>
+                        <Grid Margin="20, 0, 20, 0" HorizontalOptions="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name="Left" Clicked="Left_Clicked"  Text="&#x3C;" Grid.Row="0" Grid.Column="0"></Button>
+                            <Entry x:Name="Amount2Add" Text="0" IsReadOnly="True" Grid.Row="0" Grid.Column="1"></Entry>
+                            <Button x:Name="Right" Clicked="Right_Clicked" Text=">" Grid.Row="0" Grid.Column="2"></Button>
+                        </Grid>
+                        <Button Clicked="Add_Card_Clicked" Margin="20,0,20,0" Text="Add Card"></Button>
+                    </StackLayout>
+                </StackLayout>
+            </ContentView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

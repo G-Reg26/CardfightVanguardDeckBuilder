@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="VanguardApplication.CardSearch"
+             Title="Card Search">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="AdvSearch" Text="Normal Search" Clicked="Advance_Search_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <AbsoluteLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+        <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <ScrollView>
+                <StackLayout>
+                    <!-- Place new controls here -->
+                    <Label Text="Regulation" FontSize="Medium"></Label>
+                    <Picker x:Name="Regulation" HorizontalOptions="FillAndExpand">
+                        <Picker.Items>
+                            <x:String>All</x:String>
+                            <x:String>Standard</x:String>
+                            <x:String>G-Regulation</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label Text="Keyword" FontSize="Medium"></Label>
+                    <Entry x:Name="Keyword" Text="" Placeholder="Enter Keyword"></Entry>
+                    <Grid Margin="3, 0, 3, 0">
+                        <Button x:Name="KeywordTypeAll" Clicked="Keyword_Type_Clicked" BorderWidth="2" Text="All" Grid.Row="0" Grid.Column="0" />
+                        <Button x:Name="KeywordTypeName" Clicked="Keyword_Type_Clicked" BorderWidth="2" Text="Card Name" Grid.Row="0" Grid.Column="1" />
+                        <Button x:Name="KeywordTypeText" Clicked="Keyword_Type_Clicked" BorderWidth="2" Text="Text" Grid.Row="0" Grid.Column="2" />
+                        <Button x:Name="KeywordTypeCardNo" Clicked="Keyword_Type_Clicked" BorderWidth="2" Text="Card No." Grid.Row="1" Grid.Column="0" />
+                        <Button x:Name="KeywordTypeRace" Clicked="Keyword_Type_Clicked" BorderWidth="2" Text="Race" Grid.Row="1" Grid.Column="1" />
+                        <Button x:Name="KeywordTypeIllu" Clicked="Keyword_Type_Clicked" BorderWidth="2" Text="Illustrator" Grid.Row="1" Grid.Column="2" />
+                    </Grid>
+                    <Label x:Name="ClanLabel" Text="Clan" FontSize="Medium"></Label>
+                    <Picker x:Name="Clan" HorizontalOptions="FillAndExpand">
+                        <Picker.Items>
+                            <x:String>All</x:String>
+                            <x:String>Royal Paladin</x:String>
+                            <x:String>Oracle Think Tank</x:String>
+                            <x:String>Angel Feather</x:String>
+                            <x:String>Shadow Paladin</x:String>
+                            <x:String>Gold Paladin</x:String>
+                            <x:String>Genesis</x:String>
+                            <x:String>Kagero</x:String>
+                            <x:String>Nubatama</x:String>
+                            <x:String>Tachikaze</x:String>
+                            <x:String>Murakumo</x:String>
+                            <x:String>Narukami</x:String>
+                            <x:String>Nova Grappler</x:String>
+                            <x:String>Dimension Police</x:String>
+                            <x:String>Link Joker</x:String>
+                            <x:String>Spike Brothers</x:String>
+                            <x:String>Dark Irregulars</x:String>
+                            <x:String>Pale Moon</x:String>
+                            <x:String>Gear Chronicle</x:String>
+                            <x:String>Granblue</x:String>
+                            <x:String>Bermuda Triangle</x:String>
+                            <x:String>Aqua Force</x:String>
+                            <x:String>Megacolony</x:String>
+                            <x:String>Great Nature</x:String>
+                            <x:String>Neo Nectar</x:String>
+                            <x:String>Cray Elemental</x:String>
+                            <x:String>Etranger</x:String>
+                            <x:String>Touken Ranbu</x:String>
+                            <x:String>United Sanctuary</x:String>
+                            <x:String>Dragon Empire</x:String>
+                            <x:String>Star Gate</x:String>
+                            <x:String>Dark Zone</x:String>
+                            <x:String>Magallancia</x:String>
+                            <x:String>Zoo</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label x:Name="UnitLabel" Text="Unit" FontSize="Medium"></Label>
+                    <Grid x:Name="UnitTypGrid" Margin="3, 0, 3, 0">
+                        <Button x:Name="UnitTypeAll" Clicked="Unit_Type_Clicked" BorderWidth="2" Text="All" Grid.Row="0" Grid.Column="0" />
+                        <Button x:Name="Normal" Clicked="Unit_Type_Clicked" BorderWidth="2" Text="Normal" Grid.Row="0" Grid.Column="1" />
+                        <Button x:Name="Trigger" Clicked="Unit_Type_Clicked" BorderWidth="2" Text="Trigger" Grid.Row="0" Grid.Column="2" />
+                        <Button x:Name="G" Clicked="Unit_Type_Clicked" BorderWidth="2" Text="G" Grid.Row="1" Grid.Column="0" />
+                        <Button x:Name="UnitTypeOther" Clicked="Unit_Type_Clicked" BorderWidth="2" Text="Other" Grid.Row="1" Grid.Column="1" />
+                    </Grid>
+                    <Label x:Name="GradeLabel" Text="Grade" FontSize="Medium"></Label>
+                    <Grid x:Name="GradeGrid" Margin="3, 0, 3, 0">
+                        <Button x:Name="Grade0" Clicked="Grade_Clicked" BorderWidth="2" Text="0" Grid.Row="0" Grid.Column="0" />
+                        <Button x:Name="Grade1" Clicked="Grade_Clicked" BorderWidth="2" Text="1" Grid.Row="0" Grid.Column="1" />
+                        <Button x:Name="Grade2" Clicked="Grade_Clicked" BorderWidth="2" Text="2" Grid.Row="0" Grid.Column="2" />
+                        <Button x:Name="Grade3" Clicked="Grade_Clicked" BorderWidth="2" Text="3" Grid.Row="0" Grid.Column="3" />
+                        <Button x:Name="Grade4" Clicked="Grade_Clicked" BorderWidth="2" Text="4" Grid.Row="0" Grid.Column="4" />
+                        <Button x:Name="AllGrades" Clicked="Grade_Clicked" BorderWidth="2" Text="All" Grid.Row="1" Grid.Column="0" />
+                        <Button x:Name="OtherGrades" Clicked="Grade_Clicked" BorderWidth="2" Text="Other" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    </Grid>
+                    <Label x:Name="PowerLabel" Text="Power" FontSize="Medium"></Label>
+                    <Grid x:Name="PowerGrid" Margin="3, 0, 3, 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Picker x:Name="PowerFrom" HorizontalOptions="FillAndExpand" Grid.Column="0" Grid.Row="0">
+                            <Picker.Items>
+                                <x:String></x:String>
+                                <x:String>0</x:String>
+                                <x:String>500</x:String>
+                                <x:String>3000</x:String>
+                                <x:String>4000</x:String>
+                                <x:String>5000</x:String>
+                                <x:String>6000</x:String>
+                                <x:String>7000</x:String>
+                                <x:String>8000</x:String>
+                                <x:String>9000</x:String>
+                                <x:String>10000</x:String>
+                                <x:String>11000</x:String>
+                                <x:String>12000</x:String>
+                                <x:String>13000</x:String>
+                                <x:String>14000</x:String>
+                                <x:String>15000</x:String>
+                                <x:String>16000</x:String>
+                                <x:String>25000</x:String>
+                                <x:String>30000</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <Label Grid.Column="1" Grid.Row="0">~</Label>
+                        <Picker x:Name="PowerTo" HorizontalOptions="FillAndExpand" Grid.Column="2" Grid.Row="0">
+                            <Picker.Items>
+                                <x:String></x:String>
+                                <x:String>0</x:String>
+                                <x:String>500</x:String>
+                                <x:String>3000</x:String>
+                                <x:String>4000</x:String>
+                                <x:String>5000</x:String>
+                                <x:String>6000</x:String>
+                                <x:String>7000</x:String>
+                                <x:String>8000</x:String>
+                                <x:String>9000</x:String>
+                                <x:String>10000</x:String>
+                                <x:String>11000</x:String>
+                                <x:String>12000</x:String>
+                                <x:String>13000</x:String>
+                                <x:String>14000</x:String>
+                                <x:String>15000</x:String>
+                                <x:String>16000</x:String>
+                                <x:String>25000</x:String>
+                                <x:String>30000</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </Grid>
+                    <Label x:Name="RarityLabel" Text="Rarity" FontSize="Medium"></Label>
+                    <Picker x:Name="Rarity" HorizontalOptions="FillAndExpand">
+                        <Picker.Items>
+                            <x:String>All</x:String>
+                            <x:String>VR</x:String>
+                            <x:String>SVR</x:String>
+                            <x:String>RRR</x:String>
+                            <x:String>RR</x:String>
+                            <x:String>R</x:String>
+                            <x:String>C</x:String>
+                            <x:String>OR</x:String>
+                            <x:String>SCR</x:String>
+                            <x:String>IMR</x:String>
+                            <x:String>PR</x:String>
+                            <x:String>DR</x:String>
+                            <x:String>GR</x:String>
+                            <x:String>LD</x:String>
+                            <x:String>LIR</x:String>
+                            <x:String>Re</x:String>
+                            <x:String>SD</x:String>
+                            <x:String>SGR</x:String>
+                            <x:String>SP</x:String>
+                            <x:String>SSP</x:String>
+                            <x:String>TD</x:String>
+                            <x:String>URRR</x:String>
+                            <x:String>VDR</x:String>
+                            <x:String>WSP</x:String>
+                            <x:String>XVR</x:String>
+                            <x:String>ZR</x:String>
+                            <x:String>ЯЯЯ</x:String>
+                            <x:String>カートン特典</x:String>
+                            <x:String>Ｃ</x:String>
+                            <x:String>Ｒ</x:String>
+                            <x:String>ＲＲ</x:String>
+                            <x:String>ＲＲＲ</x:String>
+                            <x:String>ＳＰ</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label x:Name="TriggerLabel" Text="Trigger" FontSize="Medium"></Label>
+                    <Grid x:Name="TriggerGrid" Margin="3, 0, 3, 0">
+                        <Button x:Name="AllTriggers" Clicked="Trigger_Clicked" BorderWidth="2" Text="All" Grid.Row="0" Grid.Column="0" />
+                        <Button x:Name="Stand" Clicked="Trigger_Clicked" BorderWidth="2" Text="Stand" Grid.Row="0" Grid.Column="1" />
+                        <Button x:Name="Heal" Clicked="Trigger_Clicked" BorderWidth="2" Text="Heal" Grid.Row="0" Grid.Column="2" />
+                        <Button x:Name="Draw" Clicked="Trigger_Clicked" BorderWidth="2" Text="Draw" Grid.Row="1" Grid.Column="0" />
+                        <Button x:Name="Critical" Clicked="Trigger_Clicked" BorderWidth="2" Text="Critcal" Grid.Row="1" Grid.Column="1" />
+                        <Button x:Name="Front" Clicked="Trigger_Clicked" BorderWidth="2" Text="Front" Grid.Row="1" Grid.Column="2" />
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="Submit" Text="Submit" Clicked="Submit_Clicked" Grid.Column="0" Grid.Row="0"/>
+                <Button x:Name="CancelSearch" Text="×" Clicked="Cancel_Search_Clicked" Grid.Column="1" Grid.Row="0"/>
+            </Grid>
+        </StackLayout>
+        <ActivityIndicator 
+            x:Name="Loading" 
+            HorizontalOptions="CenterAndExpand" 
+            VerticalOptions="CenterAndExpand" 
+            AbsoluteLayout.LayoutFlags="All" 
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            IsRunning="False"/>
+    </AbsoluteLayout>
+</ContentPage>

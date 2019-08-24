@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="VanguardApplication.DecksList">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="RemoveDeck" Text="Remove Deck" Clicked="Remove_Deck_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <AbsoluteLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+        <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <ListView x:Name="MyListView"
+            ItemTapped="Handle_ItemTapped"
+            SelectionMode="Single"
+            CachingStrategy="RecycleElement">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}" TextColor="Black"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout>
+                <Button x:Name="NewDeck" Text="New Deck" Clicked="Add_New_Deck_Clicked"></Button>
+                <StackLayout x:Name="NewDeckLayout" IsVisible="False">
+                    <Entry x:Name="NewDeckEntry" Margin="10, 0, 10, 0" Text="" Placeholder="Enter new deck name"></Entry>
+                    <Button x:Name="CreateDeck" Margin="10, 0, 10, 0" Text="Create Deck" Clicked="Create_Deck_Clicked"></Button>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+        <ActivityIndicator 
+            x:Name="Loading" 
+            HorizontalOptions="CenterAndExpand" 
+            VerticalOptions="CenterAndExpand" 
+            AbsoluteLayout.LayoutFlags="All" 
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            IsRunning="False"/>
+    </AbsoluteLayout>
+</ContentPage>
