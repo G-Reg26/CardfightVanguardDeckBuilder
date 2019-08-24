@@ -10,4 +10,4 @@ You can create/edit decks and well as search and view cards.
 # Credits
 Author: Gregorio Lozada</br>
 Card information and art are accessed through the offical Cardfight Vanguard [Card List](https://en.cf-vanguard.com/cardlist/)</br>
-Cardfight Vanguard the card game and all its properties are owned by Bushiroad.
+Cardfight Vanguard and all its properties are owned by Bushiroad.
